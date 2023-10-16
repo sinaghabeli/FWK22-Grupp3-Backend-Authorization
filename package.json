@@ -11,14 +11,14 @@
     "nodemon": "^3.0.1"
   },
   "scripts": {
-    "start": "node ./service.js",
-    "dev": "nodemon ./service.js",
+    "start": "node ./src/service.js",
+    "dev": "nodemon ./src/service.js",
     "test": "jest"
   },
   "name": "fwk22-grupp3-backend-authorization",
   "description": "",
   "version": "1.0.0",
-  "main": "./service.js",
+  "main": "./src/service.js",
   "keywords": [],
   "author": "",
   "license": "ISC"

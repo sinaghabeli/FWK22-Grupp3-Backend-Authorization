@@ -3,6 +3,10 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const dataRoutes = require("./routes/data_routes");
 
+const connectDB = require("./config/db");
+const cookieParser = require("cookie-parser");
+const helmet = require("helmet");
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -15,7 +19,7 @@ app.use((req, res, next) => {
   if (!token) return next(); // No token, proceed without user object in req
 
   try {
-    const verified = jwt.verify(token, "YourJWTSecretKey");
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
     req.user = verified;
     next(); // Token valid, user object added to req
   } catch {

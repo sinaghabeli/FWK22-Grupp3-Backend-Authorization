@@ -4,12 +4,10 @@ const router = express.Router();
 const { userData, adminData } = require("../controllers/dataController");
 
 // Private Auth
-// const { protect } = require("../middleware/authMiddleware");
+const { protect } = require("../middleware/userMiddleware");
 
 // Declaring API for controllers
-router.post("/userData", userData);
-router.post("/all", adminData);
-
-// router.get("/me", protect, getMe);
+router.get("/userData", userData);
+router.get("/all", adminData);
 
 module.exports = router;

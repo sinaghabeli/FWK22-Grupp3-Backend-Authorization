@@ -10,6 +10,9 @@ const userData = (req, res) => {
 
 const adminData = (req, res) => {
   // Only allow access if user is authenticated and an admin
+
+  console.log(req.user);
+
   if (!req.user || req.user.role !== "admin") {
     return res.status(403).send("Access Denied");
   }

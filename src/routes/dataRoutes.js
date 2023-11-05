@@ -7,7 +7,7 @@ const { userData, adminData } = require("../controllers/dataController");
 const { protect } = require("../middleware/userMiddleware");
 
 // Declaring API for controllers
-router.get("/userData", userData);
-router.get("/all", adminData);
+router.get("/userData", protect, userData);
+router.get("/all", protect, adminData);
 
 module.exports = router;

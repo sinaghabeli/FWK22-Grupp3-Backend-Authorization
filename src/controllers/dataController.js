@@ -21,20 +21,6 @@ const adminData = (req, res) => {
   res.json({ data: "List of all users!" });
 };
 
-// router.get("/", (req, res) => {
-//   try {
-//     if (!req.user || req.user.role !== "admin") {
-//       return res.json({ data: "Secret data for admin!" });
-//     } else if (!req.user) {
-//       return res.json({ data: "Secret data for user!" });
-//     } else {
-//       res.status(403).send("Access Denied");
-//     }
-//   } catch {
-//     res.status(401).send("Invalid Token");
-//   }
-// });
-
 module.exports = {
   userData,
   adminData,
